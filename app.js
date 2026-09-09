@@ -126,7 +126,6 @@
   els.zonePrev.addEventListener("click", () => render(current - 1));
   els.zoneNext.addEventListener("click", () => render(current + 1));
 
-  els.zoom.addEventListener("click", () => els.viewer.classList.toggle("zoomed"));
   els.img.addEventListener("click", () => els.viewer.classList.toggle("zoomed"));
 
   els.menu.addEventListener("click", () => {
