@@ -291,35 +291,6 @@ hr { border: none; border-top: 1px solid var(--line); margin: 18px 0; }
 .legend-dot.adultes { background: var(--adultes); }
 .legend-dot.autres { background: var(--autres); }
 
-/* ---------- Install toast ---------- */
-
-.install-toast {
-  position: fixed;
-  left: 50%;
-  bottom: calc(var(--footer-h) + 14px);
-  transform: translateX(-50%);
-  background: #fff;
-  color: var(--ink);
-  border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(0,0,0,.3);
-  padding: 12px 14px;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  z-index: 50;
-  font-size: 0.88rem;
-  max-width: 92vw;
-}
-.install-toast-actions { display: flex; gap: 8px; flex: none; }
-.install-toast button {
-  border: none;
-  border-radius: 7px;
-  padding: 7px 11px;
-  font-size: 0.82rem;
-}
-#install-yes { background: var(--navy); color: #fff; }
-#install-no { background: var(--paper-dim); color: var(--ink-soft); }
-
 /* ---------- Responsive: mobile ---------- */
 
 @media (max-width: 860px) {
