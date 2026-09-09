@@ -1,1 +1,82 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>LNME Tchad — Liste Nationale des Médicaments Essentiels</title>
+<meta name="description" content="Liste Nationale des Médicaments Essentiels et Autres Produits de Santé — Ministère de la Santé Publique et de la Solidarité Nationale, Tchad, Édition 2022">
+<meta name="theme-color" content="#1b4b6b">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icons/icon-192.png">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="LNME Tchad">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,500;8..60,700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
 
+<div id="install-toast" class="install-toast" hidden>
+  <span>Installer ce document comme application ?</span>
+  <div class="install-toast-actions">
+    <button id="install-yes">Installer</button>
+    <button id="install-no" aria-label="Fermer">Non merci</button>
+  </div>
+</div>
+
+<header class="topbar">
+  <button id="menu-btn" class="icon-btn" aria-label="Ouvrir le sommaire" aria-expanded="false" aria-controls="sidebar">
+    <svg viewBox="0 0 24 24" width="22" height="22"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+  </button>
+  <div class="topbar-title">
+    <strong>LNME</strong><span>Tchad · Édition 2022</span>
+  </div>
+  <div class="page-jump">
+    <button id="prev-btn" class="icon-btn" aria-label="Page précédente">
+      <svg viewBox="0 0 24 24" width="20" height="20"><path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <input id="page-input" type="number" min="1" value="1" aria-label="Numéro de page">
+    <span id="page-total">/ 54</span>
+    <button id="next-btn" class="icon-btn" aria-label="Page suivante">
+      <svg viewBox="0 0 24 24" width="20" height="20"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+  <button id="zoom-btn" class="icon-btn" aria-label="Zoomer">
+    <svg viewBox="0 0 24 24" width="20" height="20"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2" fill="none"/><path d="M21 21l-4.3-4.3M11 8v6M8 11h6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+  </button>
+</header>
+
+<div class="layout">
+  <nav id="sidebar" class="sidebar" aria-label="Sommaire et pages">
+    <div class="sidebar-doc-title">
+      <p class="eyebrow">Ministère de la Santé Publique et de la Solidarité Nationale</p>
+      <h1>Liste Nationale des Médicaments Essentiels et Autres Produits de Santé</h1>
+      <p class="doc-sub">République du Tchad — Édition 2022</p>
+    </div>
+    <div id="toc" class="toc"></div>
+    <hr>
+    <div id="thumbs" class="thumbs"></div>
+  </nav>
+  <div id="sidebar-scrim" class="sidebar-scrim" hidden></div>
+
+  <main class="viewer">
+    <div id="page-stage" class="page-stage">
+      <img id="page-img" alt="Page du document" draggable="false">
+    </div>
+    <div class="swipe-zone left" id="zone-prev" aria-hidden="true"></div>
+    <div class="swipe-zone right" id="zone-next" aria-hidden="true"></div>
+  </main>
+</div>
+
+<footer class="legend">
+  <span class="legend-dot enfants"></span> Enfants (0–14 ans)
+  <span class="legend-dot adultes"></span> Adultes
+  <span class="legend-dot autres"></span> Autres produits de santé
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
