@@ -11,7 +11,7 @@
   --autres: #2f8fa6;
   --radius: 10px;
   --sidebar-w: 320px;
-  --topbar-h: 56px;
+  --topbar-h: calc(56px + env(safe-area-inset-top));
   --footer-h: 34px;
   font-size: 16px;
 }
@@ -36,17 +36,24 @@ button {
 }
 
 /* ---------- Topbar ---------- */
-
 .topbar {
   height: var(--topbar-h);
+  min-height: var(--topbar-h);
   background: var(--navy);
   color: #fff;
   display: flex;
   align-items: center;
   gap: 12px;
-  padding: 0 10px;
+
+  /* Correction pour l'application installée sur iPhone */
+  padding-top: env(safe-area-inset-top);
+  padding-left: max(10px, env(safe-area-inset-left));
+  padding-right: max(10px, env(safe-area-inset-right));
+
   position: fixed;
-  top: 0; left: 0; right: 0;
+  top: 0;
+  left: 0;
+  right: 0;
   z-index: 30;
   box-shadow: 0 1px 0 rgba(0,0,0,.15);
 }
