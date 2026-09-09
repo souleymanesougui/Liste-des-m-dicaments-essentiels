@@ -254,7 +254,7 @@ hr { border: none; border-top: 1px solid var(--line); margin: 18px 0; }
 
 .viewer.zoomed { overflow: auto; }
 .viewer.zoomed .page-stage { justify-content: flex-start; }
-.viewer.zoomed #page-img { max-width: none; width: 175%; cursor: zoom-out; }
+.viewer.zoomed #page-img { max-width: none; width: 0%; cursor: zoom-out; }
 .viewer:not(.zoomed) #page-img { cursor: zoom-in; }
 
 .swipe-zone {
